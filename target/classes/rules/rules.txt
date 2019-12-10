@@ -1,0 +1,15 @@
+- press W to move up
+- press S to move down
+- press A to move left
+- press D to move right
+- press E to put a bomb
+You are a Gold Miner, so your goal is, obviously, gold.
+It is located in one of the rooms. You can open these rooms
+only by keys, which you will find during the game. But be
+careful, they are guarded by monsters. Luckily, you can kill
+monsters by sword or bombs. Don't forget, that you can be
+killed by bomb too. You have only 3 moves to run away from the
+bomb you put before it goes off. Killing monsters by bomb will
+cost you... a bomb. Which you may not have. Killing monsters by
+sword will cost you lives, but sometimes you can heal yourself
+by lives appearing from the dead monster. Good luck!

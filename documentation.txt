@@ -1,0 +1,20 @@
+It is simple game engine, which is useful for creating turn-based strategy games.
+
+1. Start of the game.
+New (or saved) game is created by making instances of GameLoop and ViewManager in the Main class.
+GameLoop class is able to create new game by loading new map (map.txt) or to load previously saved game by loading Hero and Monster objects serialized in source files.
+ViewManager is responsible for making basic components of GUI, main menu of the game, buttons of this menu (by using secondary ButtonsMaker class) and set these buttons on action. Depending on pressing on these buttons, GameLoop will start or load the game. ViewManager will create the Map object and draw its graphic representation on the Canvas, which will be added to the root. Finally, ViewManager will put UserInputHandler on action.
+
+2. Game process.
+Main game process is going on in the UserInputHandler class, which implements EventHandler interface. This class analyzes user's input (pressed keys) and 'move' Sprite characters (Hero and Monster) on the map. Program works with this map by using 2d array. This array will be used to draw map symbols on the Canvas by using 2D GraphicContext. Each move objects' data, map array and GUI components are uploaded.
+
+3. End of the game.
+GameLoop has a parameter 'boolean newGame' to know, if it should end the game by total reloading of all instances to their initial positions or save the game by serializing Sprite objects and saving current map array in a text file. Looping is realized by having one GameLoop object during the whole process and passing it as a parameter to different classes taking part directly in game process.
+
+4. Secondary classes.
+ButtonsMaker class is responsible for making all buttons in the game. It doesn't set on action all of them.
+CanvasDrawer class is responsible for drawing on Canvas by using 2D GraphicsContext which is given as a parameter.
+HelpSubsene class creates a subscene for rules in the main menu.
+
+5. Data.
+It is a file with all constants which 'build' the game. It is possible to change paths of source images of game objects (bombs, keys etc.), size of stage or canvas for drawing map, positions of buttons in the menu, number of health of Sprite objects. All values have quite understandable names.

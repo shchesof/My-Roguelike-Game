@@ -1,0 +1,24 @@
+It is simple game engine, which is useful for creating turn-based strategy games.
+
+1. Map of the game.
+Map of the game is created by a text file named "map.txt" in sources of the project. Default settings are 30 for width and 20 for length, but you can choose them on your own. After you change the text file, you must change MAP_WIDTH and MAP_LENGTH values in the Data.java file, which contains all constant values. The following letters in the map text file correspond to the following images:
+'H' - hero
+'M' - monster
+'K' - key
+'D' - door
+'E' - empty cell (floor)
+'X' - wall
+'L' - heart
+'B' - bomb
+'S' - sword
+'Z' - skull
+Program works with this map by reading text file into the 2D array. This array will be used to draw above-described symbols on the Canvas by using 2D GraphicContext. 
+One thing is necessary in 'drawing' map - at the begining of the game each key must have one monster which corresponds to it. The point is that EACH key is guarded by monster, so while map is drawing at the begining of the game, Monster object is created at the time key is been drawing. If you will 'put' on the map less monsters than keys, program will end with error.
+
+2. Game characters.
+There are two characters in the game - main hero and monsters. Graphic objects in 2D are known as Sprites, so classes Hero and Monster extend class Sprite, which implemets basic methods to move and redraw these objects. Description of each metod you can find in the Javadoc.
+You can change their basic characteristics by changing constant values in the Data.java, for example MONSTER_HEALTH to change default number of health of Monster object or NUMBER_OF_LIVES in case of the Hero. You can also change pathes of their images.
+Characters move each time you perform key action. Now it is programmed as follows: W is to move up, S - down, D - right, A - left, E is to put the bomb (delete bomb from hero's inventory and write it to the map array). You can add and implement more key actions in the class UserInputHandler, which implements EventHandler<KeyEvent> interface.
+
+3. More about Data.java.
+Basically, it is a file with all constants which help you in 'building' of your game. You can change pathes of source images of game objects (bombs, keys etc.), size of stage or canvas for drawing map, positions of buttons in the menu. All values have quite understandable names.
